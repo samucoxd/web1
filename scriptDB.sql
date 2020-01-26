@@ -2,7 +2,7 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema web
@@ -26,6 +26,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `web`.`categoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `web`.`categoria` (
+  `idcategoria` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  PRIMARY KEY (`idcategoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `web`.`articulos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `web`.`articulos` (
@@ -33,11 +43,19 @@ CREATE TABLE IF NOT EXISTS `web`.`articulos` (
   `nombre` VARCHAR(45) NULL,
   `precio` DOUBLE NULL,
   `idproveedor` INT NULL,
+  `descripcion` TINYTEXT NULL,
+  `idcategoria` INT NULL,
   PRIMARY KEY (`idarticulos`),
-  INDEX `fk_articulos_proveedor_idx` (`idproveedor` ASC),
+  INDEX `fk_articulos_proveedor_idx` (`idproveedor` ASC) VISIBLE,
+  INDEX `fk_articulos_categoria_idx` (`idcategoria` ASC) VISIBLE,
   CONSTRAINT `fk_articulos_proveedor`
     FOREIGN KEY (`idproveedor`)
     REFERENCES `web`.`proveedor` (`idproveedor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_articulos_categoria`
+    FOREIGN KEY (`idcategoria`)
+    REFERENCES `web`.`categoria` (`idcategoria`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -67,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `web`.`ventas` (
   `subtotal` INT NULL,
   `total` INT NULL,
   PRIMARY KEY (`idventas`),
-  INDEX `fk_ventas_cliente_idx` (`idcliente` ASC),
+  INDEX `fk_ventas_cliente_idx` (`idcliente` ASC) VISIBLE,
   CONSTRAINT `fk_ventas_cliente`
     FOREIGN KEY (`idcliente`)
     REFERENCES `web`.`cliente` (`idcliente`)
@@ -85,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `web`.`detalleventa` (
   `cantidad` INT NULL,
   `total` VARCHAR(45) NULL,
   PRIMARY KEY (`idventas`, `idarticulos`),
-  INDEX `fk_detalleventa_articulos_idx` (`idarticulos` ASC),
+  INDEX `fk_detalleventa_articulos_idx` (`idarticulos` ASC) VISIBLE,
   CONSTRAINT `fk_detalleventa_articulos`
     FOREIGN KEY (`idarticulos`)
     REFERENCES `web`.`articulos` (`idarticulos`)

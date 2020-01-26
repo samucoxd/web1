@@ -8,10 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Categoria</title>
   </head>
   <body>
-    <h1>Registro de Proveedor</h1>
+    <h1>Registro de Categoria</h1>
 
     <?php
         if(isset($_GET['mensaje'])) {
@@ -29,15 +29,11 @@
 
 <div class="card" style="width: 18rem; margin:auto;">
     <div class="card-body">
-    <form method="POST" action="ProveedorInsertarPost.php">
+    <form method="POST" action="CategoriaInsertarPost.php">
         <div class="form-group">
             <label for="exampleInputEmail1">Nombre</label>
             <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Pais</label>
-            <input type="text" name="pais" class="form-control" id="exampleInputPassword1" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Grabar    </button>

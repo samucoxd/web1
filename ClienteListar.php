@@ -90,7 +90,7 @@ foreach ($cliente as $clienteItem) {
 ?>
                 </tbody>
             </table>
-            <a href="index.html" class="btn btn-primary btn-block">Volver a Inicio</a>
+            <a href="index.php" class="btn btn-primary btn-block">Volver a Inicio</a>
 
                 </div>
                 </div>

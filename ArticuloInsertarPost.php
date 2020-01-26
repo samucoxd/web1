@@ -19,12 +19,14 @@ if (in_array($_FILES['img']['type'], $permitidos)  && $_FILES['img']['size'] <= 
 
 }
       // Prepare
-   $stmt = $conexion->prepare("INSERT INTO articulos (nombre, precio, idproveedor, img) VALUES (?, ?, ?, ?)");
+   $stmt = $conexion->prepare("INSERT INTO articulos (nombre, precio, idproveedor, img, descripcion, idcategoria) VALUES (?, ?, ?, ?, ?, ?)");
    // Bind
    $stmt->bindParam(1, $_POST['nombre']);
    $stmt->bindParam(2, $_POST['precio']);
    $stmt->bindParam(3, $_POST['idproveedor']);
    $stmt->bindParam(4, $ruta);
+   $stmt->bindParam(5, $_POST['descripcion']);
+   $stmt->bindParam(6, $_POST['idcategoria']);
 
    // Excecute
    $stmt->execute();

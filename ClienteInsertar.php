@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Cliente</title>
   </head>
   <body>
     <h1>Registro de Clientes</h1>
@@ -29,7 +29,7 @@
 
 <div class="card" style="width: 18rem; margin:auto;">
     <div class="card-body">
-    <form method="POST" action="insertarClientePost.php">
+    <form method="POST" action="ClienteInsertarPost.php">
         <div class="form-group">
             <label for="exampleInputEmail1">Nombre</label>
             <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
@@ -53,19 +53,11 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Grabar    </button>
-        <a href="index.html" class="btn btn-danger"> Cancelar</a>
+        <a href="index.php" class="btn btn-danger"> Cancelar</a>
     </form>
 
     </div>
 </div>
-    
-
-
-
-
-
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

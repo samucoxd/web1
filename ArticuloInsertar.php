@@ -4,6 +4,7 @@ require_once 'conexionBD.php';
  $conexion = new Conexion();
 
  $proveedor = $conexion->query('SELECT * FROM proveedor', PDO::FETCH_ASSOC);
+ $categoria = $conexion->query('SELECT * FROM categoria', PDO::FETCH_ASSOC);
 
 ?>
 
@@ -51,15 +52,32 @@ require_once 'conexionBD.php';
         <div class="form-group">
             <label for="exampleInputPassword1">Proveedor</label>
             <select name="idproveedor" class="form-control" id="exampleInputPassword1">
-<?php
-    foreach ($proveedor as $provedorItem) {
-?>
-            <option value="<?php echo $provedorItem['idproveedor'] ?>"><?php echo $provedorItem['nombre'] ?></option>
-<?php
-    }
-?>
+                <?php
+                    foreach ($proveedor as $provedorItem) {
+                ?>
+                    <option value="<?php echo $provedorItem['idproveedor'] ?>"><?php echo $provedorItem['nombre'] ?></option>
+                <?php
+                    }
+                ?>
             </select>
-            <div class="form-group">
+        </div>
+        <div class="form-group">
+            <<label for="exampleInputPassword1">Categoria</label>
+            <select name="idcategoria" class="form-control" id="exampleInputPassword1">
+                <?php
+                    foreach ($categoria as $categoriaItem) {
+                ?>
+                    <option value="<?php echo $categoriaItem['idcategoria'] ?>"><?php echo $categoriaItem['nombre'] ?></option>
+                <?php
+                    }
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Descripcion</label>
+            <textarea name="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Descripcion del producto"></textarea>
+        </div>
+        <div class="form-group">
             <label for="exampleInputPassword1">Cargar Imagen</label>
             <input type="file" name="img" class="form-control" id="exampleInputPassword1">
         </div>
