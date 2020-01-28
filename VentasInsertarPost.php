@@ -28,20 +28,18 @@ try {
     $aux = $conexion->query('SELECT precio FROM articulos WHERE idarticulos='.$articuloItem.';', PDO::FETCH_ASSOC);
     foreach ($aux as $auxItem) {
         $total =($auxItem['precio'] * $cantidad[$key]);
-        echo "TOTAL: ".$total;
     }
-   
-    $stmt = $conexion->prepare("INSERT INTO detalleventa (idventas, idarticulos, cantidad, total) VALUES (?, ? , ?, ?)");
+    $stmt = $conexion->prepare("INSERT INTO detalleventa (idventas, idarticulos, cantidad, total) VALUES (?, ?, ?, ?)");
     $stmt->bindParam(1, $lastInsertId);
-   $stmt->bindParam(2, $articuloItem);
-   $stmt->bindParam(3, $cantidad[$key]);
-   $stmt->bindParam(4, $total);
-   $stmt->execute();
+    $stmt->bindParam(2, $articuloItem);
+    $stmt->bindParam(3, $cantidad[$key]);
+    $stmt->bindParam(4, $total);
+    $stmt->execute();
 }
    
 
-   //header("Status: 301 Moved Permanently");
-   //header("Location: ClienteInsertar.php?mensaje=true");
+   header("Status: 301 Moved Permanently");
+   header("Location: VentaListar.php");
    exit;
 } catch (\Throwable $th) {
   echo 'Error al Ingresar el Registro';

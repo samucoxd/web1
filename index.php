@@ -173,7 +173,7 @@ foreach ($articulo as $articuloItem) {
                   <i class="fas fa-times fa-fw"></i>
                   Close Window
                 </button>
-                <a href="VentaInsertar.php" class="btn btn-info">Comprar!</a>
+                <a href="VentaCalcular.php" class="btn btn-info">Comprar!</a>
               </div>
             </div>
           </div>

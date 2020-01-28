@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `web`.`articulos` (
   `nombre` VARCHAR(45) NULL,
   `precio` DOUBLE NULL,
   `idproveedor` INT NULL,
+  `img` VARCHAR(100) NULL,
   `descripcion` TINYTEXT NULL,
   `idcategoria` INT NULL,
   PRIMARY KEY (`idarticulos`),
@@ -98,11 +99,12 @@ ENGINE = InnoDB;
 -- Table `web`.`detalleventa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `web`.`detalleventa` (
+  `iddetalleventa` INT NOT NULL AUTO_INCREMENT,
   `idventas` INT NOT NULL,
   `idarticulos` INT NOT NULL,
   `cantidad` INT NULL,
   `total` VARCHAR(45) NULL,
-  PRIMARY KEY (`idventas`, `idarticulos`),
+  PRIMARY KEY (`iddetalleventa`, `idventas`, `idarticulos`),
   INDEX `fk_detalleventa_articulos_idx` (`idarticulos` ASC) VISIBLE,
   CONSTRAINT `fk_detalleventa_articulos`
     FOREIGN KEY (`idarticulos`)
