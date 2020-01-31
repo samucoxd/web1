@@ -52,13 +52,13 @@ CREATE TABLE IF NOT EXISTS `web`.`articulos` (
   CONSTRAINT `fk_articulos_proveedor`
     FOREIGN KEY (`idproveedor`)
     REFERENCES `web`.`proveedor` (`idproveedor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_articulos_categoria`
     FOREIGN KEY (`idcategoria`)
     REFERENCES `web`.`categoria` (`idcategoria`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -90,8 +90,8 @@ CREATE TABLE IF NOT EXISTS `web`.`ventas` (
   CONSTRAINT `fk_ventas_cliente`
     FOREIGN KEY (`idcliente`)
     REFERENCES `web`.`cliente` (`idcliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -109,13 +109,13 @@ CREATE TABLE IF NOT EXISTS `web`.`detalleventa` (
   CONSTRAINT `fk_detalleventa_articulos`
     FOREIGN KEY (`idarticulos`)
     REFERENCES `web`.`articulos` (`idarticulos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_detalleventa_ventas`
     FOREIGN KEY (`idventas`)
     REFERENCES `web`.`ventas` (`idventas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 

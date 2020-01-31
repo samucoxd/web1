@@ -63,6 +63,8 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="ClienteListar.php">Cliente</a>
                 <a class="dropdown-item" href="ProveedorListar.php">Proveedor</a>
+                <a class="dropdown-item" href="ArticuloListar.php">Articulo</a>
+                <a class="dropdown-item" href="CategoriaListar.php">Categoria</a>
               </div>
             </div>
           </li>
