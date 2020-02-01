@@ -38,8 +38,9 @@ try {
 }
    
 
-   header("Status: 301 Moved Permanently");
-   header("Location: VentaListar.php");
+   //header("Status: 301 Moved Permanently");
+   //header("Location: VentaListar.php");
+   echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=VentaListar.php?mensaje=true'> </head>";
    exit;
 } catch (\Throwable $th) {
   echo 'Error al Ingresar el Registro';

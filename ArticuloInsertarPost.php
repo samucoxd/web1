@@ -30,8 +30,9 @@ if (in_array($_FILES['img']['type'], $permitidos)  && $_FILES['img']['size'] <= 
 
    // Excecute
    $stmt->execute();
-    header("Status: 301 Moved Permanently");
-    header("Location: ArticuloInsertar.php?mensaje=true");
+    //header("Status: 301 Moved Permanently");
+   // header("Location: ArticuloInsertar.php?mensaje=true");
+   echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=ArticuloInsertar.php?mensaje=true'> </head>";
     exit;
 } catch (\Throwable $th) {
    echo 'Error al Ingresar el Registro';

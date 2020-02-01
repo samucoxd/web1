@@ -51,8 +51,9 @@ if (isset($_POST['editar'])) {
             $sentencia->bindParam(':idarticulos', $_POST['idarticulos']);
 
             $sentencia->execute();
-            header("Status: 301 Moved Permanently");
-               header("Location: ArticuloListar.php");
+            //header("Status: 301 Moved Permanently");
+            //header("Location: ArticuloListar.php");
+            echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=ArticuloListar.php?mensaje=true'> </head>";
         
     } else {
         echo "<script> alert('sin img')</script>";
@@ -72,8 +73,9 @@ if (isset($_POST['editar'])) {
         $sentencia->bindParam(':idarticulos', $_POST['idarticulos']);
 
         $sentencia->execute();
-        header("Status: 301 Moved Permanently");
-          header("Location: ArticuloListar.php");
+       // header("Status: 301 Moved Permanently");
+         // header("Location: ArticuloListar.php");
+         echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=ArticuloListar.php?mensaje=true'> </head>";
     }
 }
 require_once 'include/header.php';

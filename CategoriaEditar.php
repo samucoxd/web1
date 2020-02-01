@@ -21,8 +21,9 @@ if (isset($_POST['editar'])) {
         $sentencia->bindParam(':idcategoria', $_POST['idcategoria']);
 
         $sentencia->execute();
-        header("Status: 301 Moved Permanently");
-               header("Location: CategoriaListar.php");
+        //header("Status: 301 Moved Permanently");
+          //     header("Location: CategoriaListar.php");
+          echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=CategoriaListar.php?mensaje=true'> </head>";
     } catch (PDOException $th) {
         echo $th->getMessage();
     }

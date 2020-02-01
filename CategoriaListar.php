@@ -16,8 +16,9 @@ if (isset($_GET['opcion'])) {
 
             $stmt->execute();
 
-            header("Status: 301 Moved Permanently");
-            header("Location: CategoriaListar.php?mensaje=true");
+            //header("Status: 301 Moved Permanently");
+            //header("Location: CategoriaListar.php?mensaje=true");
+            echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=CategoriaListar.php?mensaje=true'> </head>";
         } catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }

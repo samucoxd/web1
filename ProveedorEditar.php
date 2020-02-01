@@ -26,8 +26,9 @@ if (isset($_POST['editar'])) {
     $sentencia->bindParam(':idproveedor', $_POST['idproveedor']);
 
     $sentencia->execute();
-    header("Status: 301 Moved Permanently");
-            header("Location: ProveedorListar.php");
+   // header("Status: 301 Moved Permanently");
+     //       header("Location: ProveedorListar.php");
+     echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=ProveedorListar.php?mensaje=true'> </head>";
 
 }
 require_once 'include/header.php';
