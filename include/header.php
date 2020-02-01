@@ -21,6 +21,7 @@
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
 
+
 </head>
 
 <body id="page-top">
@@ -51,6 +52,7 @@
                 <a class="dropdown-item" href="ProveedorInsertar.php">Proveedor</a>
                 <a class="dropdown-item" href="ArticuloInsertar.php">Articulo</a>
                 <a class="dropdown-item" href="CategoriaInsertar.php">Categoria</a>
+                <a class="dropdown-item" href="VentaCalcular.php">Venta</a>
               </div>
             </div>
           </li>
@@ -65,6 +67,7 @@
                 <a class="dropdown-item" href="ProveedorListar.php">Proveedor</a>
                 <a class="dropdown-item" href="ArticuloListar.php">Articulo</a>
                 <a class="dropdown-item" href="CategoriaListar.php">Categoria</a>
+                <a class="dropdown-item" href="VentaListar.php">Ventas</a>
               </div>
             </div>
           </li>
