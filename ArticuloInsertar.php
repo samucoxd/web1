@@ -47,7 +47,7 @@ require_once 'include/header.php';
                     </select>
                 </div>
                 <div class="form-group">
-                    <<label for="exampleInputPassword1">Categoria</label>
+                    <label for="exampleInputPassword1">Categoria</label>
                         <select name="idcategoria" class="form-control" id="exampleInputPassword1">
                             <?php
                             foreach ($categoria as $categoriaItem) {

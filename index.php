@@ -119,7 +119,7 @@ foreach ($articulo as $articuloItem) {
     <div class="container">
 
       <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-white">Acerca de...</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom divider-light">
@@ -133,21 +133,19 @@ foreach ($articulo as $articuloItem) {
       <!-- About Section Content -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the
-            complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy
-            customization.</p>
+          <p class="lead">Proyecto Final de la materia Programacion Web I, materia del 5to semestre de la carrera
+          de Ing. de Sistemas de la Universidad Domingo Savio</p>
         </div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and
-            add your email address to the contact form to make it fully functional!</p>
+          <p class="lead">Autor: Samuel Vizcarra Aguilar, para descargar en proyecto de GitHub puede ingresar a http://github.com/samucoxd/web1 o en el siguiente Link</p>
         </div>
       </div>
 
       <!-- About Section Button -->
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
+        <a class="btn btn-xl btn-outline-light" href="http://github.com/samucoxd/web1">
           <i class="fas fa-download mr-2"></i>
-          Free Download!
+          GitHub
         </a>
       </div>
 
@@ -159,7 +157,7 @@ foreach ($articulo as $articuloItem) {
     <div class="container">
 
       <!-- Contact Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contactame</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom">
@@ -177,32 +175,32 @@ foreach ($articulo as $articuloItem) {
           <form name="sentMessage" id="contactForm" novalidate="novalidate">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Name</label>
-                <input class="form-control" id="name" type="text" placeholder="Name" required="required"
+                <label>Nombre</label>
+                <input class="form-control" id="name" type="text" placeholder="Nombre" required="required"
                   data-validation-required-message="Please enter your name.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Email Address</label>
-                <input class="form-control" id="email" type="email" placeholder="Email Address" required="required"
+                <label>Correo</label>
+                <input class="form-control" id="email" type="email" placeholder="Correo" required="required"
                   data-validation-required-message="Please enter your email address.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Phone Number</label>
-                <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required"
+                <label>Numero de Telefono</label>
+                <input class="form-control" id="phone" type="tel" placeholder="Numero de Telefono" required="required"
                   data-validation-required-message="Please enter your phone number.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Message</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required"
+                <label>Mensaje</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Mensaje" required="required"
                   data-validation-required-message="Please enter a message."></textarea>
                 <p class="help-block text-danger"></p>
               </div>
@@ -210,7 +208,7 @@ foreach ($articulo as $articuloItem) {
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>
+              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
             </div>
           </form>
         </div>
