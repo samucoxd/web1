@@ -13,8 +13,9 @@ try {
     // Excecute
     $stmt->execute();
 
-    header("Status: 301 Moved Permanently");
-    header("Location: ClienteInsertar.php?mensaje=true");
+   // header("Status: 301 Moved Permanently");
+    //header("Location: ClienteInsertar.php?mensaje=true");
+    echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=ClienteInsertar.php?mensaje=true'> </head>";
     exit;
 } catch (\Throwable $th) {
    echo 'Error al Ingresar el Registro';

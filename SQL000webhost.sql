@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema web
+-- Schema id12207573_web
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema web
+-- Schema id12207573_web
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `web` DEFAULT CHARACTER SET utf8 ;
-USE `web` ;
+CREATE SCHEMA IF NOT EXISTS `id12207573_web` DEFAULT CHARACTER SET utf8 ;
+USE `id12207573_web` ;
 
 -- -----------------------------------------------------
--- Table `web`.`proveedor`
+-- Table `id12207573_web`.`proveedor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `web`.`proveedor` (
+CREATE TABLE IF NOT EXISTS `id12207573_web`.`proveedor` (
   `idproveedor` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `pais` VARCHAR(45) NULL,
@@ -26,9 +26,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `web`.`categoria`
+-- Table `id12207573_web`.`categoria`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `web`.`categoria` (
+CREATE TABLE IF NOT EXISTS `id12207573_web`.`categoria` (
   `idcategoria` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`idcategoria`))
@@ -36,9 +36,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `web`.`articulos`
+-- Table `id12207573_web`.`articulos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `web`.`articulos` (
+CREATE TABLE IF NOT EXISTS `id12207573_web`.`articulos` (
   `idarticulos` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `precio` DOUBLE NULL,
@@ -51,21 +51,21 @@ CREATE TABLE IF NOT EXISTS `web`.`articulos` (
   INDEX `fk_articulos_categoria_idx` (`idcategoria` ASC) VISIBLE,
   CONSTRAINT `fk_articulos_proveedor`
     FOREIGN KEY (`idproveedor`)
-    REFERENCES `web`.`proveedor` (`idproveedor`)
+    REFERENCES `id12207573_web`.`proveedor` (`idproveedor`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_articulos_categoria`
     FOREIGN KEY (`idcategoria`)
-    REFERENCES `web`.`categoria` (`idcategoria`)
+    REFERENCES `id12207573_web`.`categoria` (`idcategoria`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `web`.`cliente`
+-- Table `id12207573_web`.`cliente`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `web`.`cliente` (
+CREATE TABLE IF NOT EXISTS `id12207573_web`.`cliente` (
   `idcliente` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `edad` INT NULL,
@@ -77,43 +77,41 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `web`.`ventas`
+-- Table `id12207573_web`.`ventas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `web`.`ventas` (
+CREATE TABLE IF NOT EXISTS `id12207573_web`.`ventas` (
   `idventas` INT NOT NULL AUTO_INCREMENT,
   `fecha` DATE NULL,
   `idcliente` INT NULL,
   `subtotal` INT NULL,
   `total` INT NULL,
   PRIMARY KEY (`idventas`),
-  INDEX `fk_ventas_cliente_idx` (`idcliente` ASC) VISIBLE,
   CONSTRAINT `fk_ventas_cliente`
     FOREIGN KEY (`idcliente`)
-    REFERENCES `web`.`cliente` (`idcliente`)
+    REFERENCES `id12207573_web`.`cliente` (`idcliente`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `web`.`detalleventa`
+-- Table `id12207573_web`.`detalleventa`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `web`.`detalleventa` (
+CREATE TABLE IF NOT EXISTS `id12207573_web`.`detalleventa` (
   `iddetalleventa` INT NOT NULL AUTO_INCREMENT,
   `idventas` INT NOT NULL,
   `idarticulos` INT NOT NULL,
   `cantidad` INT NULL,
   `total` VARCHAR(45) NULL,
   PRIMARY KEY (`iddetalleventa`, `idventas`, `idarticulos`),
-  INDEX `fk_detalleventa_articulos_idx` (`idarticulos` ASC) VISIBLE,
   CONSTRAINT `fk_detalleventa_articulos`
     FOREIGN KEY (`idarticulos`)
-    REFERENCES `web`.`articulos` (`idarticulos`)
+    REFERENCES `id12207573_web`.`articulos` (`idarticulos`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_detalleventa_ventas`
     FOREIGN KEY (`idventas`)
-    REFERENCES `web`.`ventas` (`idventas`)
+    REFERENCES `id12207573_web`.`ventas` (`idventas`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;

@@ -5,20 +5,9 @@ require_once 'conexionBD.php';
 
  $articulo = $conexion->query('SELECT * FROM articulos', PDO::FETCH_ASSOC);
  $cliente = $conexion->query('SELECT * FROM cliente', PDO::FETCH_ASSOC);
-
+ require_once 'include/header.php';
 ?>
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
-
+	<script type="text/javascript" src="js/jquery.js"></script>
 		<script>
 			
     		$(function(){
@@ -34,18 +23,11 @@ require_once 'conexionBD.php';
 				});
 			});
 		</script>
-    <title>Compra</title>
-  </head>
-  <body>
-  <header>
-			<div class="alert alert-info">
-			<h2>Insertar Registros a la BD con PHP y JQUERY</h2>
-			</div>
-		</header>
-
-		<section>
+<div class="masthead">
+  <div class="card" style="width: 60rem; margin:auto;">
+    <div class="card-body">
+        <div class="h3 text-center">Nueva Venta</div>
 			<form method="post" action="VentasInsertarPost.php">
-                <h3 class="bg-primary text-center pad-basic no-btm">Agregar Nueva Venta </h3>
                 <div class="card" style="width: 18rem; margin:auto;">
                 <div class="card-body">
                     <div class="form-group">
@@ -97,6 +79,8 @@ require_once 'conexionBD.php';
 					<button id="adicional" name="adicional" type="button" class="btn btn-warning"> Más + </button>
 
 				</div>
-			</form>
-  </body>
-</html>
+            </form>
+            </div>
+            </div>
+            </div>
+<?php require_once 'include/footer.php';  ?>

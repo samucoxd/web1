@@ -8,25 +8,12 @@ $detalle = $conexion->query("
 SELECT idventas, articulos.nombre, articulos.precio, cantidad, total from detalleventa
 inner join articulos on detalleventa.idarticulos=articulos.idarticulos WHERE detalleventa.idventas='$id';",
  PDO::FETCH_ASSOC);
-
+ require_once 'include/header.php';
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Listado de Ventas</title>
-  </head>
-  <body>
-  <h1>Listado de Ventas</h1>
-
+<div class="masthead">
 <div class="card" style="width: 60rem; margin:auto;">
     <div class="card-body">
+      <div class="h3 text-center">Detalle de Venta</div>
         <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -62,16 +49,6 @@ foreach ($detalle as $detalleItem) {
 
                 </div>
                 </div>
+                </div>
 
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
-</html>
+<?php  require_once 'include/footer.php'; ?>
